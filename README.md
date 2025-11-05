@@ -23,7 +23,7 @@ int desempilhar(NO* topo){
 	aux = (*topo).prox;
 	(*topo).prox = (*aux).prox;
 
-	item = (*aux).valor;
+	int item = aux->valor;
 	free(aux);
 
 	return item;
@@ -50,8 +50,8 @@ int main(){
 	while(1){
 
 	printf("\nMenu:\n");
-	printf("1-Empilhar;\n);
-	printf("2-Desempilhar;\n);
+	printf("1-Empilhar;\n");
+	printf("2-Desempilhar;\n");
 	printf("3-Imprimir;\n");
 	printf("0-Sair;\n");
 	scanf("%d",&opc);
@@ -78,28 +78,10 @@ int main(){
 		printf("\n");
 		break;
 
-	case 0;
+	case 0:
 		return 0;
 	default:
-		printf("\nOpcao Invalida"\n");
-
-	NO* elemento1 = (NO*)malloc(sizeof(NO));
-	elemento1->valor = 10;
-	elemento1->prox = NULL;
-
-	NO* elemento2 = (NO*)malloc(sizeof(NO));
-	(*elemento2).valor = -5;
-	(*elemento2).prox = elemento1;
-
-	NO* elemento3 = (NO*)malloc(sizeof(NO));
-	(*elemento3).valor = 90;
-	(*elemento3).prox = elemento2;
-
-	printf("&elemento1=%p, elemento1 = %d -> %p\n", elemento1,(*elemento1).valor, (*elemento1).prox);
-	printf("&elemento2=%p, elemento2 = %d -> %p\n", elemento2,(*elemento2).valor, (*elemento2).prox);
-	printf("&elemento3=%p, elemento3 = %d -> %p\n", elemento3,(*elemento3).valor, (*elemento3).prox);
-
-	free(elemento3);
-
-	
+		printf("\nOpcao Invalida\n");
+		}
+	}
 }
